@@ -17,9 +17,3 @@ def create_app():
     from .usuarios import bp_usuarios
     app.register_blueprint(bp_usuarios)
     return app
-
-@app.route('/ver')
-def ver():
-    usuarios = Usuario.query.all()
-    return render_template('usuarios.html', usuarios=usuarios)
-

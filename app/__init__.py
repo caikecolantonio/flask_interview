@@ -17,5 +17,7 @@ def create_app():
 
     from .usuarios import bp_usuarios
     app.register_blueprint(bp_usuarios)
+    from .ponto import bp_ponto
+    app.register_blueprint(bp_ponto)
 
     return app

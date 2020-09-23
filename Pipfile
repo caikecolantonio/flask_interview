@@ -13,6 +13,8 @@ flask-migrate = "*"
 marshmallow-sqlalchemy = "*"
 pytest = "*"
 pytest-flask = "*"
+sqlalchemy-utils = "*"
+flask-babel = "*"
 
 [requires]
 python_version = "3.8"

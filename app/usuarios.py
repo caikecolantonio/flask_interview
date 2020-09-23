@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, request, jsonify, render_template
+from flask import Blueprint, current_app, request, jsonify
 from .model import Usuario
 from .serializer import UsuarioSchema
 

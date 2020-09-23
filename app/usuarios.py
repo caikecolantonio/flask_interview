@@ -15,13 +15,24 @@ def deletar(identificador):
     current_app.db.session.commit()
     return jsonify('Deletado!!')
 
-@bp_usuarios.route('/modificar/<identificador>', methods=['POST'])
+@bp_usuarios.route('/modificar/<identificador>', methods=['PATCH'])
 def modificar(identificador):
     bs = UsuarioSchema()
-    query = Usuario.query.filter(Usuario.id == identificador)
-    query.update(request.json)
+    nome_completo = request.json.get('nome_completo', '')
+    cpf = request.json.get('cpf', '')
+    email = request.json.get('email', '')
+
+    alterar = Usuario.query.get(identificador)
+
+    alterar.nome_completo = nome_completo
+    alterar.cpf = cpf
+    alterar.email = email
+
+    current_app.db.session.add(alterar)
     current_app.db.session.commit()
-    return bs.jsonify(query.first())
+
+    return UsuarioSchema().jsonify(alterar), 200 
+
 
 @bp_usuarios.route('/cadastrar', methods=['POST'])
 def cadastrar():

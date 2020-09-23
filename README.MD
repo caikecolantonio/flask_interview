@@ -65,3 +65,9 @@ URL para mostrar todos os pontos:
 ```
 localhost/mostrar_ponto
 ```
+
+Como rodar os testes:
+
+```
+pytest tests/ -v
+```

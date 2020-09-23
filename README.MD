@@ -45,3 +45,23 @@ Para alterar dados do usuario também tem que ser enviado como o dicionario para
 localhost/modificar/id_usuario
 ```
 
+Para inserir Dados no Batidas_Ponto o dicionario deve ser assim (com o usuario_id e o tipo_batida(entrada ou saida)):
+
+```
+{
+    "usuario_id": "2",
+    "tipo_batida": "saida"
+
+}
+```
+URL:
+
+```
+localhost/cadastrar_ponto
+```
+
+URL para mostrar todos os pontos:
+
+```
+localhost/mostrar_ponto
+```

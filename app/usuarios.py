@@ -9,7 +9,7 @@ def mostrar():
     result = Usuario.query.all()
     return UsuarioSchema(many=True).jsonify(result), 200
 
-@bp_usuarios.route('/deletar/<identificador>', methods=['GET'])
+@bp_usuarios.route('/deletar/<identificador>', methods=['DELETE'])
 def deletar(identificador):
     Usuario.query.filter(Usuario.id == identificador).delete()
     current_app.db.session.commit()
